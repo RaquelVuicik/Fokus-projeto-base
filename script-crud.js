@@ -10,7 +10,7 @@ const listaTarefas = JSON.parse(localStorage.getItem('listaTarefas')) || [];
 
 function atualizarTarefas () {
     localStorage.setItem('listaTarefas', JSON.stringify(listaTarefas));
-}
+};
 
 function criarElementoTarefa(textoTarefa) {
     const li = document.createElement('li')
@@ -50,11 +50,11 @@ function criarElementoTarefa(textoTarefa) {
     li.append(botao)
 
     return li
-}
+};
 
 btnAdicionarTarefa.addEventListener('click', () => {
     formAdicionarTarefa.classList.toggle('hidden');
-})
+});
 
 formAdicionarTarefa.addEventListener('submit', (evento) => {
     evento.preventDefault();
@@ -68,7 +68,7 @@ formAdicionarTarefa.addEventListener('submit', (evento) => {
     atualizarTarefas()
     textArea.value = ''
     formAdicionarTarefa.classList.add('hidden')
-})
+});
 
 listaTarefas.forEach(textoTarefa => {
     const elementoTarefa = criarElementoTarefa(textoTarefa)
