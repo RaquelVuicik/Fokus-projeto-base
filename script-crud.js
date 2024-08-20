@@ -17,5 +17,5 @@ formAdicionarTarefa.addEventListener('submit', (evento) => {
         descricao: textArea.value
     }
     listaTarefas.push(textoTarefa);
-    localStorage.setItem('textoTarefa', listaTarefas);
+    localStorage.setItem('listaTarefas', JSON.stringify(listaTarefas));
 })
