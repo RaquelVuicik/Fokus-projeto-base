@@ -30,7 +30,7 @@ musicaFocoInput.addEventListener('change', () => {
 })
 
 focoBt.addEventListener('click', () => {
-    tempoDecorridoEmSegundos = 1500; //25minutos x 60min = 1500 milissegundos.
+    tempoDecorridoEmSegundos = 6; //25minutos x 60min = 1500 milissegundos.
     alterarContexto('foco');
     focoBt.classList.add('active');
     
@@ -97,6 +97,11 @@ const contagemRegressiva = () => {
     if(tempoDecorridoEmSegundos <= 0) {
         audioTempoFinalizado.play();    // áudio executado quando o cronômetro for finalizar
         alert('Tempo finalizado!');
+        const focoAtivo = html.getAttribute('data-contexto') == 'foco'
+        if (focoAtivo) {
+            const evento = new CustomEvent('FocoFinalizado')
+            document.dispatchEvent(evento)
+        }
         zerar();
         return;
     }
