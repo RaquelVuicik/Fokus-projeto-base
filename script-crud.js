@@ -41,7 +41,7 @@ function criarElementoTarefa(textoTarefa) {
 
     botao.onclick = () => {
         const novaDescricao = prompt("Qual é o novo nome da tarefa?")
-        console.log('Nova descrição da tarefa: ', novaDescricao)
+        // console.log('Nova descrição da tarefa: ', novaDescricao)
         if (novaDescricao) {
             paragrafo.textContent = novaDescricao
             textoTarefa.descricao = novaDescricao
